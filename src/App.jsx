@@ -4,7 +4,7 @@ import Layout from './components/pages/layout';
 
 function App() {
   return (
-    <div >
+    <div className='font-rubik ' >
       <Layout>
         <Home />
       </Layout>
