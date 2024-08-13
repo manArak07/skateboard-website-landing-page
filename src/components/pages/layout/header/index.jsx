@@ -47,7 +47,7 @@ export default function Header() {
     })
 
     return (
-        <header className="w-full relative h-52 flex justify-between items-center bg-white ">
+        <header className="w-full relative h-52 flex justify-between items-center bg-white sm:h-32">
             <div >
                 <h1 className="text-5xl font-black ml-10 sm:text-4xl xs:text-3xl">Dexpress</h1>
             </div>
