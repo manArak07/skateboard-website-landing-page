@@ -1,19 +1,20 @@
 import { useEffect, useRef, useState } from "react"
 import navBar from "../../../../providers/header-nav"
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
+import { useTheme, useThemeUpdate } from "../../../../providers/theme";
+import { CiDark } from "react-icons/ci";
 
 export default function Header() {
     const [isMin, setIsMin] = useState(false)
     const [isClicked, setIsClicked] = useState(false)
     const menuRef = useRef(null);
-
+    const darkTheme = useTheme()
+    const toggleTheme = useThemeUpdate()
 
     const handleClick = () => {
         setIsClicked(prevClick => !prevClick)
        
-    
     }
-
 
 
     const handleWidth = () => {
@@ -47,9 +48,10 @@ export default function Header() {
     })
 
     return (
-        <header className="w-full relative h-52 flex justify-between items-center bg-white sm:h-32">
-            <div >
+        <header className={`w-full relative h-52 flex justify-between items-center ${darkTheme ? "bg-[#333] text-white" : "bg-white text-black"}  sm:h-32`}>
+            <div className="flex items-center">
                 <h1 className="text-5xl font-black ml-10 sm:text-4xl xs:text-3xl">Dexpress</h1>
+                <CiDark onClick={toggleTheme} className="w-8 cursor-pointer h-8 ml-5" />
             </div>
             <div className="mr-10">
                 <nav className="flex items-center">
